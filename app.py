@@ -6,8 +6,6 @@ print(os.getcwd())
 path = os.getcwd()
 
 
-with open('Models/RF_model.pkl', 'rb') as f:
-    randomforest = pickle.load(f)
 
 with open('Models/knn3_model.pkl', 'rb') as f:
     knn3_model = pickle.load(f)
@@ -22,10 +20,6 @@ def get_predictions(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, 
     mylist = [float(i) for i in mylist]
     vals = [mylist]
 
-
-    if req_model == 'RandomForest':
-        #print(req_model)
-        return randomforest.predict(vals)[0]
 
     elif req_model == 'KNN3':
         #print(req_model)
