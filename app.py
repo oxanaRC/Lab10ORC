@@ -21,7 +21,7 @@ def get_predictions(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, 
     vals = [mylist]
 
 
-    elif req_model == 'KNN3':
+    if req_model == 'KNN3':
         #print(req_model)
         return knn3_model.predict(vals)[0]
     elif req_model == 'NB':
